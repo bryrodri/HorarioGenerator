@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 
+//componentes
+import ClasicBuilder from './Componentes/ClasicBuilder/clasicBuilder'
+import Home from './Componentes/Home/home'
+import SelectionTipe from './Componentes/SelectionTipe/selectionTipe'
+import VisualBuilder from './Componentes/VisualBuilder/visualBuilder'
+
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
