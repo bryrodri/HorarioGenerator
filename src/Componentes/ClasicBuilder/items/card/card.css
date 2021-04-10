@@ -1,0 +1,21 @@
+.card{
+    padding: 40px 0;
+    position: relative;
+}
+
+.card-title{
+    width: 90%;
+    
+}
+
+.card-button{
+    margin-top: 20px;
+}
+
+.delete-card{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
