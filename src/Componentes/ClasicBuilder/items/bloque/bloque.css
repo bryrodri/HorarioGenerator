@@ -1,18 +1,25 @@
 .bloque-Secction{
     margin-left: 5%;
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
-
     margin-top: 20px;
+
+
 }
 
 .bloque-dia{
-    width: 40%;
+    width: 100%;
 }
 
 .bloque-hora{
-    width: 15%;
+    margin-top: 5px;
+    width: 45%;
 }
+
+.text-bloque-secction{
+    margin-bottom: 5px;
+}
+
