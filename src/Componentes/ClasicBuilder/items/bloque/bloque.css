@@ -20,6 +20,12 @@
 }
 
 .text-bloque-secction{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 5px;
 }
+
 

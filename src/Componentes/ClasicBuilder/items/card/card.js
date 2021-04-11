@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { TextInput } from 'grommet';
-import { BiTrash, BiMinus, BiPlus } from "react-icons/bi";
+import { BiTrash, BiMinus, BiPlus, BiIntersect, BiBadge, BiBadgeCheck } from "react-icons/bi";
 
 //estilos
 import './card.css'
@@ -17,6 +17,11 @@ export const Card = (props) => {
         // Here, we invoke the callback with the new value
         props.changeTitle(event.target.value, props.asignacion.id);
     }
+
+    function changeColor(event){
+        props.changeColor(event.target.value, props.asignacion.id)
+    }
+
     function agregarBloque(event){
 
         props.addBloque(props.asignacion.id);
@@ -42,6 +47,19 @@ export const Card = (props) => {
         props.UpdateFin(props.asignacion.id, id, dia)
     }
 
+    function statusIcon(){
+        if(props.asignacion.estatus=="valido"){
+            return <BiBadgeCheck size={18}/>
+        }
+        else if(props.asignacion.estatus=="empty"){
+            return <BiBadge size={18}/>
+        }
+        else if(props.asignacion.estatus=="duplicado"){
+            return <BiIntersect size={18}/>
+        }
+
+    }
+
 
     return (
         <div className="card">
@@ -50,13 +68,23 @@ export const Card = (props) => {
                     <button className="button-classic trash-button" onClick={deleteCard}><BiTrash size={18}/></button>
             </div>
 
+            <div className="card-Estatus">
+                {
+                    statusIcon()
+                }
+            </div>
+
             <div className="card-title">
                 <TextInput
                 placeholder="Nombre"
                 value={props.titulo}
                 onChange={handleChange}
-                style={{marginLeft:"5%"}}
+
                 />
+            </div>
+
+            <div className="card-title" style={{marginTop:"10px"}}>
+            <input type="color" value={props.color} style={{width:"98%"}} onChange={changeColor} />
             </div>
 
             <div>

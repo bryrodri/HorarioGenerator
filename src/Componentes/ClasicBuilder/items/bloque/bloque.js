@@ -1,5 +1,6 @@
 import React from 'react'
 import { Select } from 'grommet';
+import { BiCheckbox, BiCheck, BiIntersect } from "react-icons/bi";
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
@@ -48,11 +49,32 @@ const Bloque = (props) => {
         }
     }
 
+    function icon(){
+
+        if(props.bloque.estatus==="empty"){
+            return <BiCheckbox size={14}/>
+        }
+        else if(props.bloque.estatus==="duplicado"){
+            return <BiIntersect size={14}/>
+        }
+        else if(props.bloque.estatus==="valido"){
+            return <BiCheck size={14}/>
+        }
+
+        
+    }
+
 
     return (
         <div className="bloque-Secction">
             <div className="text-bloque-secction">
                 <span>Bloque {props.index+1} {props.bloque.estatus}</span>
+
+                {
+                    icon()
+                }
+
+                
             </div>
 
             <div className="bloque-dia">
