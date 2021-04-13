@@ -1,0 +1,48 @@
+
+.header-principal{
+    background: 
+    linear-gradient(to right bottom, 
+     #4CC9F0,
+     #480CA8);
+}
+
+.header-contenedor{
+    margin-left: 2.5%;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header-text{
+    
+    width: 50%;
+}
+
+.header-image{
+    
+    padding: 40px 0;
+    width: 50%;
+}
+
+#Tarjetas{
+    animation: bloques 5s infinite linear;
+}
+
+
+
+@keyframes bloques {
+    0%{
+        
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+

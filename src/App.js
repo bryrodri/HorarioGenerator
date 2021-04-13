@@ -1,6 +1,7 @@
 import './App.css';
 
 //componentes
+import Nav from './Componentes/nav/nav'
 import ClasicBuilder from './Componentes/ClasicBuilder/clasicBuilder'
 import Home from './Componentes/Home/home'
 import SelectionTipe from './Componentes/SelectionTipe/selectionTipe'
@@ -10,7 +11,10 @@ function App() {
   
   return (
     <div className="App">
-      <ClasicBuilder></ClasicBuilder>
+      
+      <Nav></Nav>
+      {/* <ClasicBuilder></ClasicBuilder> */}
+      <Home></Home>
     </div>
   );
 }
