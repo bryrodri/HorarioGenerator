@@ -1,0 +1,14 @@
+#corazon{
+    animation: corazon infinite alternate 1s;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes corazon {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}

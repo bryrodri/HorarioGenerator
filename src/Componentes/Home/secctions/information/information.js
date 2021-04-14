@@ -8,12 +8,14 @@ import './information.css'
 
 import Fitem from './items/fitem/fitem'
 import Sitem from './items/sitem/sitem'
+import Titem from './items/titem/titem'
 
 const Information = () => {
     return (
-        <div >
+        <div className="information-secction" >
             <Fitem></Fitem>
             <Sitem></Sitem>
+            <Titem></Titem>
         </div>
     )
 }

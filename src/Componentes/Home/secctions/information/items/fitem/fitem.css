@@ -1,0 +1,29 @@
+#brazo{
+   animation: brazoA infinite alternate 1.5s;
+   transform-origin: center;
+   transform-box: fill-box;
+}
+
+#Boton{
+    animation: boton infinite linear 2s;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes boton {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+
+@keyframes brazoA {
+    from{
+        transform: rotateZ(20deg);
+    }
+    to{
+        transform: rotateZ(0deg);
+    }
+}

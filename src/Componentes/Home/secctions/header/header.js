@@ -1,4 +1,5 @@
 import React from 'react'
+import {  NavLink } from 'react-router-dom';
 
 //estilos
 import './header.css'
@@ -11,7 +12,7 @@ const Header = () => {
                     
                     <h1>Generador de horarios</h1>
                     <p>Con esta aplicacion tienes la posibilidad de generar a tu gusto un horario</p>
-                    <button>Generar el mio</button>
+                    <NavLink to="/Builder"  className="header-button"> <span className="text-header">Generar el mio</span></NavLink> 
                 </div>
 
                 <div className="header-image">

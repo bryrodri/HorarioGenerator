@@ -1,0 +1,16 @@
+#descarga{
+    animation: descarga infinite alternate 1s;
+    transform-origin: center;
+    transform-box: fill-box;
+
+}
+
+@keyframes descarga {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(40px);
+    }
+
+}

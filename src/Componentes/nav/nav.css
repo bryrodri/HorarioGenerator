@@ -1,7 +1,10 @@
 .nav-container{
     width: 100vw;
     height: 60px;
-    background-color: #F72585;
+    background: 
+    linear-gradient(to right bottom, 
+     #F72585,
+     #B5179E);
 
 
 }
