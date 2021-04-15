@@ -1,8 +1,8 @@
 import React from 'react'
 import { Select } from 'grommet';
 import { BiCheckbox, BiCheck, BiIntersect } from "react-icons/bi";
-import 'react-notifications/lib/notifications.css';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+
+import {NotificationManager} from 'react-notifications';
 
 //estilos
 import './bloque.css'
@@ -81,7 +81,7 @@ const Bloque = (props) => {
                 <Select
                 size={"medium"}
                 placeholder={"Dia de la semana"}
-
+                disabled={props.disableForm ? false : true}
                 options={DIAS}
                 value={props.bloque.dia}
                 onChange={({ option }) => UpdateDia(option)}
@@ -92,6 +92,7 @@ const Bloque = (props) => {
                 <Select
                 options={HORAS}
                 placeholder={"Desde"}
+                disabled={props.disableForm ? false : true}
                 value={props.bloque.inicio}
                 onChange={({ option }) => UpdateInicio(option)}
                 /> 
@@ -102,12 +103,13 @@ const Bloque = (props) => {
                 <Select
                 options={HORAS}
                 placeholder={"Hasta"}
+                disabled={props.disableForm ? false : true}
                 value={props.bloque.fin}
                 onChange={({ option }) => UpdateFin(option)}
                 /> 
 
             </div>
-            <NotificationContainer/>
+            
         </div>
     )
 }

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { TextInput } from 'grommet';
-import { BiTrash, BiMinus, BiPlus, BiIntersect, BiBadge, BiBadgeCheck } from "react-icons/bi";
+import { BiTrash, BiMinus, BiPlus, BiIntersect, BiBadge, BiBadgeCheck, BiHide, BiShow } from "react-icons/bi";
 
 //estilos
 import './card.css'
@@ -35,6 +35,10 @@ export const Card = (props) => {
         props.deleteCard(props.asignacion.id)
     }
 
+    function hideCard(){
+        props.hideCard(props.asignacion.id)
+    }
+
     function UpdateDia(id, dia){
         props.UpdateDia(props.asignacion.id, id, dia)
     }
@@ -60,12 +64,22 @@ export const Card = (props) => {
 
     }
 
+    function visIcon(){
+        if(!props.asignacion.visibility){
+            return <BiHide size={18}/>
+        }
+        else{
+            return <BiShow size={18}/>
+        }
+
+    }
 
     return (
-        <div className="card">
+        <div className={"card " + (!props.asignacion.visibility ? 'novisibility-card' : props.asignacion.estatus==="duplicado"&&props.asignacion.visibility ? "duplicate-card" : '')} >
 
             <div className="delete-card">
                     <button className="button-classic trash-button" onClick={deleteCard}><BiTrash size={18}/></button>
+                    <button className="button-classic trash-button" onClick={hideCard}>{visIcon()}</button>
             </div>
 
             <div className="card-Estatus">
@@ -79,12 +93,12 @@ export const Card = (props) => {
                 placeholder="Nombre"
                 value={props.titulo}
                 onChange={handleChange}
-
+                disabled={props.asignacion.visibility ? false : true}
                 />
             </div>
 
             <div className="card-title" style={{marginTop:"10px"}}>
-            <input type="color" value={props.color} style={{width:"98%"}} onChange={changeColor} />
+            <input type="color" value={props.color} disabled={props.asignacion.visibility ? false : true} style={{width:"98%"}} onChange={changeColor} />
             </div>
 
             <div>
@@ -93,6 +107,7 @@ export const Card = (props) => {
                     props.asignacion.bloques.map((x,index)=>{
                         return <Bloque key={x.id} 
                         index={index}
+                        disableForm={props.asignacion.visibility}
                         bloque={x}
                         UpdateDia={UpdateDia}
                         UpdateInicio={UpdateInicio}
@@ -103,8 +118,8 @@ export const Card = (props) => {
             </div>
 
             <div className="card-button">
-                <button className="button-add-delete" onClick={agregarBloque}> <BiPlus size={14}/> </button>
-                <button className="button-add-delete"  onClick={eliminarBloque}> <BiMinus size={14}/> </button>
+                <button className="button-add-delete" disabled={props.asignacion.visibility ? false : true} onClick={agregarBloque}> <BiPlus size={14}/> </button>
+                <button className="button-add-delete" disabled={props.asignacion.visibility ? false : true} onClick={eliminarBloque}> <BiMinus size={14}/> </button>
             </div>
 
 

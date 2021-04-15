@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 //estilos 
 import './cardSecction.css'
@@ -8,8 +8,12 @@ import Card from '../../items/card/card'
 import EmptyCard from '../../items/emptyCard/emptyCard'
 
 
-const CardSecction = () => {
-    const [horario, setHorario] = React.useState({nombre:"", asignaciones:[]});
+const CardSecction = (props) => {
+    const [horario, setHorario] = useState({nombre:"", asignaciones:[]});
+
+    useEffect(() => {
+        props.ChangeHorario(horario)
+     }, [horario]);
 
     function createCard(){
         var id= horario.asignaciones.length==0 ? 1 : horario.asignaciones[horario.asignaciones.length-1].id+1
@@ -18,16 +22,35 @@ const CardSecction = () => {
             titulo:"",
             color:"#ff0000",
             estatus:"empty",
+            visibility:true,
             bloques:[]
 
         }
         setHorario({... horario,asignaciones:[...horario.asignaciones, asignacion]})
+        // await props.ChangeHorario(horario)
         console.log(horario)
     }
 
     function deleteCard(id) {
         var asignaciones2= horario.asignaciones.filter(x=> x.id!=id)
         setHorario({...horario,asignaciones:asignaciones2})
+    }
+
+    function hideCard(id){
+        var asignaciones2= horario.asignaciones
+        asignaciones2= asignaciones2.map(x=>{
+
+            if(x.id===id){
+                x.visibility=!x.visibility
+            }
+            return x
+        })
+
+        asignaciones2=VEstatusLocalCard(asignaciones2)
+        asignaciones2= VEstatusCard(asignaciones2)
+        asignaciones2= VEstatusGlobalCard(asignaciones2)
+        setHorario({...horario,asignaciones:asignaciones2})
+        
     }
 
     function changeTitle(title,id){
@@ -200,7 +223,7 @@ const CardSecction = () => {
             for (let index = 0; index < cards.length; index++) { // se selecciona la primera tarjeta a comparar
                 for (let index2 = 0; index2 < cards.length; index2++) { // se selecciona la segunda tarjeta a comparar
 
-                    if(cards[index].id!==cards[index2].id){ // se verifica que no se esten comparando las mismas tarjetas
+                    if(cards[index].id!==cards[index2].id && cards[index2].visibility){ // se verifica que no se esten comparando las mismas tarjetas
 
                         for (let index3 = 0; index3 < cards[index].bloques.length; index3++) {// se itera en los bloques de la primera cada tarjeta
                             bandera=true
@@ -341,6 +364,7 @@ const CardSecction = () => {
                    addBloque={addBloque} 
                    deleteBloque={deleteBloque}
                    deleteCard={deleteCard}
+                   hideCard={hideCard}
                    UpdateDia={UpdateDia}
                    UpdateInicio={UpdateInicio}
                    UpdateFin={UpdateFin} ></Card>
