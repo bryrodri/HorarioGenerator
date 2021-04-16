@@ -17,7 +17,7 @@ const HorarioSecction = (props) => {
             </div>
 
                 <div className="table-secction">
-                    <Table></Table>
+                    <Table horario={props.horario}></Table>
                 </div>
                 
 

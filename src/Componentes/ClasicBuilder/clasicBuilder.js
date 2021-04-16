@@ -50,7 +50,7 @@ export class ClasicBuilder extends Component {
 
     HorarioPage=()=>{
         if(this.state.horarioPage){
-            return <HorarioSecction OpenCloseHorarioPage={this.OpenCloseHorarioPage}></HorarioSecction>
+            return <HorarioSecction horario={this.state.horario} OpenCloseHorarioPage={this.OpenCloseHorarioPage}></HorarioSecction>
         }
         else{
             return null
