@@ -4,19 +4,19 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    width: 100%;
+    width: 1000px;
+    height: 100%;
     
-
+    
 }
 
 .table--item{
     margin-top: 40px;
-    margin-bottom: 400px;
-    width: 90%;
     text-align: center;
     background-color: #fff;
-
+    width: 90%;
     border: 1px solid #167F92;
+    overflow: auto;
     
 }
 
@@ -36,18 +36,7 @@
 }
 
 
-.contenido--table::after{
 
-    content: attr(texto);
-    top:0%;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: attr(cantidad px) ;
-    background-color: #167F92;
-    z-index: 15;
-    color: #D9E4E6;
-}
 
 .contenido-table{
     top:0%;
@@ -61,5 +50,24 @@
 }
 
 
+@media (min-width:480px){
+    .table-container{
+        width: 90%;
+        margin-left: 5%;
+        
+    }
+    .table--item{
+        margin-top: 40px;
+        
+        width: 90%;
+        text-align: center;
+        background-color: #fff;
+        width: 1000px;
+        border: 1px solid #167F92;
+    
+    
+        
+    }
 
+}
 

@@ -39,6 +39,9 @@ export class ClasicBuilder extends Component {
             }
             else{
                 NotificationManager.info('Generando horarios');
+                this.OpenCloseHorarioPage()
+
+                
             }
         }
         else{

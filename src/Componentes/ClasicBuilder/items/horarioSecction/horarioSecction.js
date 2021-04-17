@@ -12,14 +12,14 @@ const HorarioSecction = (props) => {
 
             <div className="horario-secction-container">
 
-            <div className="delete-card">
+            <div className="delete-card float-button-window">
                     <button className="button-classic trash-button" onClick={props.OpenCloseHorarioPage} ><BsX size={18}/></button>
             </div>
 
-                <div className="table-secction">
+
+                <div className="table--mobile">
                     <Table horario={props.horario}></Table>
                 </div>
-                
 
 
             </div>

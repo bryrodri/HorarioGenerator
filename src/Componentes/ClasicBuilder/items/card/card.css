@@ -1,9 +1,9 @@
 .card{
     padding: 50px 0;
     position: relative;
-    width: 30%;
+    width: 80%;
     background-color: aliceblue;
-    margin: 20px 1.5%;
+    margin: 10px 1.5%;
     border-radius: 8px;
     transition: all ease-in-out 1s;
 }
@@ -66,6 +66,27 @@
 .duplicate-card{
     transform: scale(1.07);
     
+}
+
+
+@media (min-width:480px){
+    .card{
+        width: 45%;
+        margin: 20px 1.5%;
+    }
+}
+
+
+@media (min-width:780px){
+    .card{
+        padding: 50px 0;
+        position: relative;
+        width: 30%;
+        background-color: aliceblue;
+        margin: 20px 1.5%;
+        border-radius: 8px;
+        transition: all ease-in-out 1s;
+    }
 }
 
 
