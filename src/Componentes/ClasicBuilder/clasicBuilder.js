@@ -15,19 +15,35 @@ import HorarioSecction from './items/horarioSecction/horarioSecction'
 
 export class ClasicBuilder extends Component {
     state={
-        horario:{},
+        horario:null,
         horarioPage:false
     }
 
+    async componentDidMount(){
+        var horario = JSON.parse(localStorage.getItem('horario'));
+        console.log(horario)
+
+        if(JSON.parse(localStorage.getItem('horario'))){
+            this.setState({horario:horario})
+        }
+        else{
+
+            this.setState({horario:{nombre:"", asignaciones:[]}} )
+        }
+
+    }
+
     ChangeHorario= (horario)=>{
-        this.setState({horario:horario})
-        console.log(this.state.horario)
+        this.setState({horario:horario},()=>{ localStorage.setItem('horario', JSON.stringify(this.state.horario))})
+        
+
+        
     }
 
     BuildHorario=()=>{
         var horario = this.state.horario
         var asignaciones= horario.asignaciones.filter(x=> x.visibility===true)
-
+        window.scrollTo(0,0);
         console.log(asignaciones)
 
         if(asignaciones.length>0){
@@ -39,7 +55,9 @@ export class ClasicBuilder extends Component {
             }
             else{
                 NotificationManager.info('Generando horarios');
+                
                 this.OpenCloseHorarioPage()
+                
 
                 
             }
@@ -53,6 +71,7 @@ export class ClasicBuilder extends Component {
 
     HorarioPage=()=>{
         if(this.state.horarioPage){
+            
             return <HorarioSecction horario={this.state.horario} OpenCloseHorarioPage={this.OpenCloseHorarioPage}></HorarioSecction>
         }
         else{
@@ -60,11 +79,18 @@ export class ClasicBuilder extends Component {
         }
     }
 
+    scrolltop=()=>{
+        window.scrollTo(0,0);
+    }
+
     OpenCloseHorarioPage=()=>{
+        
         this.setState({horarioPage:!this.state.horarioPage})
     }
 
     render() {
+
+        if(this.state.horario){
         return (
             <div className="min-container-hei">
                     <Box align="end" pad="large">
@@ -72,12 +98,13 @@ export class ClasicBuilder extends Component {
                         dropProps={{ align: { top: 'bottom', left: 'left' } }}
                         label="Acciones"
                         items={[
-                        { label: 'Configuracion', onClick: () => {this.BuildHorario()} },
-                        { label: 'Generar horario', onClick: () => {this.OpenCloseHorarioPage()} },
+                        { label: 'Reiniciar', onClick: () => {this.BuildHorario()} },
+                        { label: 'Configureacion', onClick: () => {this.OpenCloseHorarioPage()} },
+                        { label: 'Generar horario', onClick: () => {this.BuildHorario()} },
                         ]}
                     />
                     </Box>
-                <CardSecction ChangeHorario={this.ChangeHorario} ></CardSecction>
+                <CardSecction ChangeHorario={this.ChangeHorario} horario={this.state.horario} ></CardSecction>
                 <NotificationContainer/>
 
                 {
@@ -86,6 +113,10 @@ export class ClasicBuilder extends Component {
                 
             </div>
         )
+        }
+        else{
+            return null
+        }
     }
 }
 

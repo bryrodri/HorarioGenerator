@@ -9,7 +9,7 @@ import EmptyCard from '../../items/emptyCard/emptyCard'
 
 
 const CardSecction = (props) => {
-    const [horario, setHorario] = useState({nombre:"", asignaciones:[]});
+    const [horario, setHorario] = useState(props.horario);
 
     useEffect(() => {
         props.ChangeHorario(horario)

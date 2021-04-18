@@ -91,14 +91,14 @@ export const Card = (props) => {
             <div className="card-title">
                 <TextInput
                 placeholder="Nombre"
-                value={props.titulo}
+                value={props.asignacion.titulo}
                 onChange={handleChange}
                 disabled={props.asignacion.visibility ? false : true}
                 />
             </div>
 
             <div className="card-title" style={{marginTop:"10px"}}>
-            <input type="color" value={props.color} disabled={props.asignacion.visibility ? false : true} style={{width:"98%"}} onChange={changeColor} />
+            <input type="color" value={props.asignacion.color} disabled={props.asignacion.visibility ? false : true} style={{width:"98%"}} onChange={changeColor} />
             </div>
 
             <div>

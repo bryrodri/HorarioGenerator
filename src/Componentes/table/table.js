@@ -7,18 +7,23 @@ import './table.css'
 export default class Table extends Component {
 	state={
 		horario:this.props.horario,
-		algo:1,
 		generador:[]
 	}
 
 	async componentDidMount(){
 		console.log("hola")
 		console.log(this.state.horario)
-        this.setState({algo:2})
 
+		document.body.style.overflow = 'hidden';
 		this.GenerarGenerador()
 
     }
+
+	componentWillUnmount() {
+		document.body.style.overflow = 'unset';
+		document.body.style.overflowX = "hidden";
+	}
+	
 
 	GenerarGenerador=()=> {
 		var horario= this.state.horario
@@ -89,11 +94,11 @@ export default class Table extends Component {
 		return (
 			<div className="table-container">
 
-			<table className="table--item" >
+			<table className="table--item" id="horario" >
 				<thead>
 					<tr >
 						<th></th>
-						<th  >Lunes {this.state.algo}</th>
+						<th  >Lunes</th>
 						<th >Martes</th>
 						<th >Miercoles</th>
 						<th >Jueves</th>
