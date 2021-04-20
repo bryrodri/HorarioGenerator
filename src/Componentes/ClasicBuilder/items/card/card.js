@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput } from 'grommet';
+
 import { BiTrash, BiMinus, BiPlus, BiIntersect, BiBadge, BiBadgeCheck, BiHide, BiShow } from "react-icons/bi";
 
 //estilos
@@ -53,13 +53,13 @@ export const Card = (props) => {
 
     function statusIcon(){
         if(props.asignacion.estatus=="valido"){
-            return <BiBadgeCheck size={18}/>
+            return <BiBadgeCheck size={20}/>
         }
         else if(props.asignacion.estatus=="empty"){
-            return <BiBadge size={18}/>
+            return <BiBadge size={20}/>
         }
         else if(props.asignacion.estatus=="duplicado"){
-            return <BiIntersect size={18}/>
+            return <BiIntersect size={20}/>
         }
 
     }
@@ -74,8 +74,16 @@ export const Card = (props) => {
 
     }
 
+    function cardColor(){
+        return {
+            backgroundColor:props.asignacion.color
+        }
+
+
+    }
+
     return (
-        <div className={"card " + (!props.asignacion.visibility ? 'novisibility-card' : props.asignacion.estatus==="duplicado"&&props.asignacion.visibility ? "duplicate-card" : '')} >
+        <div className={"card " + (!props.asignacion.visibility ? 'novisibility-card' : props.asignacion.estatus==="duplicado"&&props.asignacion.visibility ? "duplicate-card" : '')}  >
 
             <div className="delete-card">
                     <button className="button-classic trash-button" onClick={deleteCard}><BiTrash size={18}/></button>
@@ -89,12 +97,14 @@ export const Card = (props) => {
             </div>
 
             <div className="card-title">
-                <TextInput
+
+                <input type="text"
+                className="inputs"
                 placeholder="Nombre"
                 value={props.asignacion.titulo}
                 onChange={handleChange}
                 disabled={props.asignacion.visibility ? false : true}
-                />
+                 />
             </div>
 
             <div className="card-title" style={{marginTop:"10px"}}>

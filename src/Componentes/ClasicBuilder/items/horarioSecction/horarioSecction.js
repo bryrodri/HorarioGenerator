@@ -19,6 +19,7 @@ const HorarioSecction = (props) => {
 
 
     function descargarHorarioPDF(){
+        if(document.getElementById('horario')){
         const input = document.getElementById('horario');
 
         html2canvas(input).then((canvas)=>{
@@ -30,35 +31,18 @@ const HorarioSecction = (props) => {
             pdf.save("mypdf.pdf");
 
 
-            // var width = canvas.width;
-            // var height = canvas.height;
-            // var millimeters = {};
-            // millimeters.width = Math.floor(width * 0.264583);
-            // millimeters.height = Math.floor(height * 0.264583);
-            // var imgData = canvas.toDataURL(
-            //     'image/png');
-            // var doc = new jsPDF("p", "mm", "a4");
-            // doc.deletePage(1);
-            // doc.addPage(millimeters.width, millimeters.height);
-            // doc.addImage(imgData, 'PNG', 0, 0);
-            // doc.save('WebSiteScreen.pdf');
-
-
-            // const imgData = canvas.toDataURL('image/png');
-            // const pdf = new jsPDF('p', 'mm', [2000, 2000]);
-            // pdf.addImage(imgData, 'JPEG', 0, 0, 2000, 2000);
-            // pdf.save("download.pdf");
         }
         )
+        }
 
-
-        // html2canvas(document.querySelector("#horario")).then(canvas => {
-        //     document.body.appendChild(canvas)
-        // });
 
     }
 
     function descargarHorarioIMG(){
+        if(document.getElementById('horario')){
+
+
+        
         const input = document.getElementById('horario');
         var width = input.attributes
         
@@ -73,7 +57,7 @@ const HorarioSecction = (props) => {
             a.click();
         }
         )
-
+        }
 
     }
 

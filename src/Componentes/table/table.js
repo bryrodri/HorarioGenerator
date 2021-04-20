@@ -11,8 +11,8 @@ export default class Table extends Component {
 	}
 
 	async componentDidMount(){
-		console.log("hola")
-		console.log(this.state.horario)
+
+
 
 		document.body.style.overflow = 'hidden';
 		this.GenerarGenerador()
@@ -27,24 +27,31 @@ export default class Table extends Component {
 
 	GenerarGenerador=()=> {
 		var horario= this.state.horario
+
+
+		// horario= horario.asignaciones.filter(x=>x.visibility===true)
 		var generador=[]
 		for (let index = 0; index < horario.asignaciones.length; index++) {
 			var bloques= horario.asignaciones[index].bloques
-			for (let index2 = 0; index2 < bloques.length; index2++) {
-				var objetoGenerador={
-					dia:bloques[index2].dia,
-					inicio:bloques[index2].inicio,
-					cantidad:bloques[index2].fin-bloques[index2].inicio,
-					nombre:horario.asignaciones[index].titulo,
+			if(horario.asignaciones[index].visibility===true){
+				for (let index2 = 0; index2 < bloques.length; index2++) {
+					var objetoGenerador={
+						dia:bloques[index2].dia,
+						inicio:bloques[index2].inicio,
+						cantidad:bloques[index2].fin-bloques[index2].inicio,
+						nombre:horario.asignaciones[index].titulo,
+					}
+	
+					generador.push(objetoGenerador)
+					
 				}
 
-				generador.push(objetoGenerador)
-				
 			}
-		}
-		console.log(generador)
 
-		console.log(this.state.generador.filter(x=>x.dia==="Lunes" && x.inicio===6))
+		}
+
+
+
 		this.setState({generador:generador})
 		
 	}
@@ -52,7 +59,7 @@ export default class Table extends Component {
 	EstilosDiv=(dia, hora)=> {
 
 		if(this.state.generador.filter(x=>x.dia===dia && x.inicio===hora).length>0){
-			console.log("entre")
+
 			return {
 				 		height:this.state.generador.filter(x=>x.dia===dia && x.inicio===hora)[0].cantidad*33+"px",
 					

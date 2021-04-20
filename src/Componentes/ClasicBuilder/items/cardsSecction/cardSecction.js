@@ -15,12 +15,16 @@ const CardSecction = (props) => {
         props.ChangeHorario(horario)
      }, [horario]);
 
+    useEffect(() => {
+        setHorario(props.horario);
+    }, [props.horario])
+
     function createCard(){
         var id= horario.asignaciones.length==0 ? 1 : horario.asignaciones[horario.asignaciones.length-1].id+1
         var asignacion={
             id:id,
             titulo:"",
-            color:"#ff0000",
+            color:"#4CC9F0",
             estatus:"empty",
             visibility:true,
             bloques:[]
@@ -85,10 +89,10 @@ const CardSecction = (props) => {
     function addBloque(id){
         var asignaciones2= horario.asignaciones
         var bloquenew={
-            dia:null,
+            dia:"",
             estatus:"empty",
-            inicio:null,
-            fin:null
+            inicio:"",
+            fin:""
         }
         asignaciones2= asignaciones2.map(x=>{
             

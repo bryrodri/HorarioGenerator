@@ -44,7 +44,7 @@ export class ClasicBuilder extends Component {
         var horario = this.state.horario
         var asignaciones= horario.asignaciones.filter(x=> x.visibility===true)
         window.scrollTo(0,0);
-        console.log(asignaciones)
+        
 
         if(asignaciones.length>0){
             if(asignaciones.filter(x=>x.estatus==="duplicado").length>0){
@@ -67,15 +67,22 @@ export class ClasicBuilder extends Component {
         }
     }
 
+    ReiniciarHorario=()=>{
+        this.setState({horario:{nombre:"", asignaciones:[]}} ,()=>{ localStorage.setItem('horario', JSON.stringify(this.state.horario))})
 
+
+    }
 
     HorarioPage=()=>{
+
+
+
         if(this.state.horarioPage){
             
             return <HorarioSecction horario={this.state.horario} OpenCloseHorarioPage={this.OpenCloseHorarioPage}></HorarioSecction>
         }
         else{
-            return null
+            return <div></div>
         }
     }
 
@@ -98,8 +105,7 @@ export class ClasicBuilder extends Component {
                         dropProps={{ align: { top: 'bottom', left: 'left' } }}
                         label="Acciones"
                         items={[
-                        { label: 'Reiniciar', onClick: () => {this.BuildHorario()} },
-                        { label: 'Configureacion', onClick: () => {this.OpenCloseHorarioPage()} },
+                        { label: 'Reiniciar', onClick: () => {this.ReiniciarHorario()} },
                         { label: 'Generar horario', onClick: () => {this.BuildHorario()} },
                         ]}
                     />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select } from 'grommet';
+
 import { BiCheckbox, BiCheck, BiIntersect } from "react-icons/bi";
 
 import {NotificationManager} from 'react-notifications';
@@ -13,15 +13,21 @@ import HORAS from '../../../../Samples/horas'
 
 const Bloque = (props) => {
 
-    function UpdateDia(opcion){
-        console.log(opcion)
-        props.UpdateDia(props.bloque.id,opcion)
+    function UpdateDia(event){
+        console.log(event.target.value)
+        props.UpdateDia(props.bloque.id,event.target.value)
     }
 
-    function UpdateInicio(opcion){
-        console.log(opcion)
+    function UpdateInicio(event){
+        var opcion=event.target.value
+        opcion= parseInt(opcion)
+        console.log(typeof opcion)
+        console.log(typeof props.bloque.fin)
 
+        console.log("inicio "+opcion)
+        console.log("fin "+props.bloque.fin)
         if(props.bloque.fin){
+                    // 8            10
             if(props.bloque.fin<opcion || props.bloque.fin===opcion){
                 NotificationManager.info('La hora de inicio debe ser menor que la hora final y deben ser diferentes.');
             }
@@ -34,9 +40,12 @@ const Bloque = (props) => {
         }
     }
 
-    function UpdateFin(opcion){
-        console.log(opcion)
+    function UpdateFin(event){
+        var opcion=event.target.value
+        opcion= parseInt(opcion)
+        console.log("fin "+opcion)
         if(props.bloque.inicio){
+            console.log("inicio "+props.bloque.inicio)
             if(props.bloque.inicio>opcion || props.bloque.inicio===opcion){
                 NotificationManager.info('La hora de inicio debe ser menor que la hora final y deben ser diferentes.');
             }
@@ -52,23 +61,28 @@ const Bloque = (props) => {
     function icon(){
 
         if(props.bloque.estatus==="empty"){
-            return <BiCheckbox size={14}/>
+            return <BiCheckbox className="icon-bloque"  size={18}/>
         }
         else if(props.bloque.estatus==="duplicado"){
-            return <BiIntersect size={14}/>
+            return <BiIntersect className="icon-bloque" size={18}/>
         }
         else if(props.bloque.estatus==="valido"){
-            return <BiCheck size={14}/>
+            return <BiCheck className="icon-bloque"  size={18}/>
         }
 
         
     }
 
+    function deleteBloque(){
+        console.log(props.bloque.id)
+    }
+
 
     return (
         <div className="bloque-Secction">
+
             <div className="text-bloque-secction">
-                <span>Bloque {props.index+1} {props.bloque.estatus}</span>
+                <span> </span>
 
                 {
                     icon()
@@ -78,35 +92,49 @@ const Bloque = (props) => {
             </div>
 
             <div className="bloque-dia">
-                <Select
-                size={"medium"}
-                placeholder={"Dia de la semana"}
+                <select
                 disabled={props.disableForm ? false : true}
-                options={DIAS}
                 value={props.bloque.dia}
-                onChange={({ option }) => UpdateDia(option)}
-                />
+                onChange={UpdateDia}
+                >
+                    <option value="" disabled hidden >Dia de la semana</option>
+                    {
+                       DIAS.map((x, index)=>{
+                        return <option value={x} key={index}>{x}</option>
+                       }) 
+                    }
+                </select>
             </div>
 
             <div className="bloque-hora">
-                <Select
-                options={HORAS}
-                placeholder={"Desde"}
+                <select
                 disabled={props.disableForm ? false : true}
                 value={props.bloque.inicio}
-                onChange={({ option }) => UpdateInicio(option)}
-                /> 
-
+                onChange={UpdateInicio}
+                >
+                    <option value="" disabled hidden >Desde</option>
+                    {
+                       HORAS.map((x, index)=>{
+                        return <option value={x} key={index}>{x}</option>
+                       }) 
+                    }
+                </select>
             </div>
 
             <div className="bloque-hora">
-                <Select
-                options={HORAS}
-                placeholder={"Hasta"}
+                <select
+                
                 disabled={props.disableForm ? false : true}
                 value={props.bloque.fin}
-                onChange={({ option }) => UpdateFin(option)}
-                /> 
+                onChange={UpdateFin}
+                >
+                    <option value="" disabled hidden >Hasta</option>
+                    {
+                       HORAS.map((x,index)=>{
+                        return <option value={x} key={index}>{x}</option>
+                       }) 
+                    }
+                </select>
 
             </div>
             
