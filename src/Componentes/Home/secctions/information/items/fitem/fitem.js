@@ -80,7 +80,7 @@ const Fitem = () => {
 
             <div className="informacion-item-Text text-left">
                 <h2>Crea de manera dinamica</h2>
-                <p>Con nuestro sistema puedes crear tu horario y se haran las validaciones de manera dinamica a medida que vayas modificando los formularios.</p>
+                <p>Con nuestro sistema puedes crear tu horario haciendo validaciones a tiempo real, verificando que no tengas alguna fecha duplicada entre asignaciones.</p>
 
             </div>
 

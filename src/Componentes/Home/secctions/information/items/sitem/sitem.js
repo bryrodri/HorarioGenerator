@@ -7,8 +7,8 @@ const Sitem = () => {
 <div className="informacion-item-container container-rigth">
             <div className="informacion-item-Text">
             
-                <h2>Crea de manera dinamica</h2>
-                <p>Con nuestro sistema puedes crear tu horario y se haran las validaciones de manera dinamica a medida que vayas modificando los formularios.</p>
+                <h2>Descargalo en digital</h2>
+                <p>Una vez hayas terminado tu horario tendras la posibilidad de descargarlo de forma digital en formato PDF y JPG.</p>
 
 
 

@@ -11,8 +11,8 @@ export class Nav extends Component {
             <div className="nav-container">
                 
                 <div className="nav-menu">
-                    <NavLink to="/Home"  className="nav--buton"> <BiHomeAlt size={22} /> <span>Inicio</span></NavLink> 
-                    <NavLink to="/Manual"  className="nav--buton"> <BiBookBookmark size={22} /> <span>Manual</span></NavLink> 
+                    <NavLink to="/Home"  className="nav--buton"> <BiHomeAlt size={22} /> <span className="text--nav">Inicio</span></NavLink> 
+                    <NavLink to="/Manual"  className="nav--buton"> <BiBookBookmark size={22} /> <span className="text--nav">Manual</span></NavLink> 
                 </div>
 
                 <div className="nav--action">

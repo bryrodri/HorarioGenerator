@@ -20,7 +20,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    width: 80%;
+    width: 70%;
     height: 100%;
 
 
@@ -28,7 +28,7 @@
 
 .nav--buton{
     display: block;
-    width: 20%;
+    width: 25%;
     height: 100%;
     text-decoration: none;
     color: #fff;
@@ -48,7 +48,7 @@
 
 .nav--action{
     align-self: flex-end;
-    width: 20%;
+    width: 30%;
     height: 100%;
 
     display: flex;
@@ -77,4 +77,15 @@
     display: none;
 
 
+}
+
+.text--nav{
+    display: none;
+}
+
+
+@media (min-width:480px){
+    .text--nav{
+        display: block;
+    }
 }

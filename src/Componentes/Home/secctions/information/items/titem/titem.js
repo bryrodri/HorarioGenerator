@@ -59,8 +59,8 @@ const Titem = () => {
             </div>
 
             <div className="informacion-item-Text text-left">
-                <h2>Crea de manera dinamica</h2>
-                <p>Con nuestro sistema puedes crear tu horario y se haran las validaciones de manera dinamica a medida que vayas modificando los formularios.</p>
+                <h2>Guardado automatico</h2>
+                <p>A medidad que vas llenando las tarjetas para completar con tu horario el sistema ira guardando todos los cambios realizados de manera automatica.</p>
 
             </div>
 
