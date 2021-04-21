@@ -1,0 +1,54 @@
+.information--secction{
+    position: relative;
+
+
+}
+
+.information--icon{
+    cursor: help;
+}
+
+.information--icon:hover +.information--container{
+    display: block;
+    z-index: 11;
+}
+
+.information--container:hover{
+    display: block;
+    z-index: 11;
+}
+
+.information--container{
+    position: absolute;
+    display: none;
+    padding: 20px;
+    
+    width: 50vw;
+    border-radius: 6px;
+    z-index: 0;
+    background: #fff;
+    /* border: 1px #000 solid; */
+    
+    color: #fff;
+    background: 
+    linear-gradient(to right bottom, 
+     #F72585,
+     #480CA8);
+    
+
+}
+
+.information--item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 8px;
+    align-items: baseline;
+    
+}
+
+.information--item span{
+    margin-left: 4px;
+    
+}
+

@@ -115,7 +115,14 @@ const Bloque = (props) => {
                     <option value="" disabled hidden >Desde</option>
                     {
                        HORAS.map((x, index)=>{
-                        return <option value={x} key={index}>{x}</option>
+                        var hora=""
+                        if(x>12){
+                            hora= x-12+":00 PM"
+                        }
+                        else{
+                            hora= x+":00 AM"
+                        }
+                        return <option value={x} key={index}>{hora}</option>
                        }) 
                     }
                 </select>
@@ -131,7 +138,14 @@ const Bloque = (props) => {
                     <option value="" disabled hidden >Hasta</option>
                     {
                        HORAS.map((x,index)=>{
-                        return <option value={x} key={index}>{x}</option>
+                        var hora=""
+                        if(x>12){
+                            hora= x-12+":00 PM"
+                        }
+                        else{
+                            hora= x+":00 AM"
+                        }
+                        return <option value={x} key={index}>{hora}</option>
                        }) 
                     }
                 </select>

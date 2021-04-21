@@ -102,6 +102,9 @@ const CardSecction = (props) => {
             }
             return x
         })
+        asignaciones2=VEstatusLocalCard(asignaciones2)
+        asignaciones2= VEstatusCard(asignaciones2)
+        asignaciones2= VEstatusGlobalCard(asignaciones2)
         setHorario({...horario,asignaciones:asignaciones2})
     }
 
@@ -114,6 +117,9 @@ const CardSecction = (props) => {
             }
             return x
         })
+        asignaciones2=VEstatusLocalCard(asignaciones2)
+        asignaciones2= VEstatusCard(asignaciones2)
+        asignaciones2= VEstatusGlobalCard(asignaciones2)
         setHorario({...horario,asignaciones:asignaciones2})
 
     }
@@ -150,13 +156,13 @@ const CardSecction = (props) => {
             for (let index2 = 0; index2 < cards[index].bloques.length; index2++) {
                 bandera= true
 
-                if(cards[index].bloques[index2].dia!==null && cards[index].bloques[index2].inicio!==null && cards[index].bloques[index2].fin!==null){
+                if(cards[index].bloques[index2].dia!=="" && cards[index].bloques[index2].inicio!=="" && cards[index].bloques[index2].fin!==""){
 
                     var arrayBloque= arrayGenerator(cards[index].bloques[index2].inicio, cards[index].bloques[index2].fin)
 
                     for (let index3 = 0; index3 < cards[index].bloques.length; index3++) {
 
-                        if(cards[index].bloques[index3].id!==cards[index].bloques[index2].id && cards[index].bloques[index3].dia && cards[index].bloques[index3].inicio && cards[index].bloques[index3].fin){
+                        if(cards[index].bloques[index3].id!==cards[index].bloques[index2].id && cards[index].bloques[index3].dia!=="" && cards[index].bloques[index3].inicio!=="" && cards[index].bloques[index3].fin!==""){
                             if(cards[index].bloques[index2].dia===cards[index].bloques[index3].dia){
                                 var arrayBloque2= arrayGenerator(cards[index].bloques[index3].inicio, cards[index].bloques[index3].fin)
                                 if(arrayVerifyContain(arrayBloque2, arrayBloque)){
@@ -189,12 +195,12 @@ const CardSecction = (props) => {
         var bloques= card.bloques
         for (let index = 0; index < bloques.length; index++) {
             bandera=true
-            if(bloques[index].inicio && bloques[index].fin && bloques[index].dia){
+            if(bloques[index].inicio1=="" && bloques[index].fin!=="" && bloques[index].dia!==""){
                 var arrayBloque= arrayGenerator(bloques[index].inicio, bloques[index].fin)
 
                 for (let index2 = 0; index2 < bloques.length; index2++) {
 
-                    if(bloques[index2].id!==bloques[index].id && bloques[index].inicio && bloques[index].fin && bloques[index].dia){
+                    if(bloques[index2].id!==bloques[index].id && bloques[index].inicio!=="" && bloques[index].fin!=="" && bloques[index].dia!==""){
                         if(bloques[index2].dia === bloques[index].dia ){
                             var arrayBloque2= arrayGenerator(bloques[index2].inicio, bloques[index2].fin)
 
@@ -231,13 +237,13 @@ const CardSecction = (props) => {
 
                         for (let index3 = 0; index3 < cards[index].bloques.length; index3++) {// se itera en los bloques de la primera cada tarjeta
                             bandera=true
-                            if(cards[index].bloques[index3].dia!==null && cards[index].bloques[index3].inicio!== null && cards[index].bloques[index3].fin!==null){ // se verifica que el bloque no este vacio
+                            if(cards[index].bloques[index3].dia!=="" && cards[index].bloques[index3].inicio!=="" && cards[index].bloques[index3].fin!==""){ // se verifica que el bloque no este vacio
                                 
                                 var arrayBloque= arrayGenerator(cards[index].bloques[index3].inicio, cards[index].bloques[index3].fin)
 
                                 for (let index4 = 0; index4 < cards[index2].bloques.length; index4++) { // se itera los bloques de la segunda tarjeta
 
-                                    if(cards[index2].bloques[index4].dia!==null && cards[index2].bloques[index4].inicio!== null && cards[index2].bloques[index4].fin!==null ){ // se verifica que el segundo bloque no este vacio
+                                    if(cards[index2].bloques[index4].dia!=="" && cards[index2].bloques[index4].inicio!=="" && cards[index2].bloques[index4].fin!=="" ){ // se verifica que el segundo bloque no este vacio
 
                                         if(cards[index2].bloques[index4].dia===cards[index].bloques[index3].dia){ // se verifica que las comparaciones sea entre dias iguales
 

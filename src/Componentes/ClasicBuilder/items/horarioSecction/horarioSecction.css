@@ -4,7 +4,6 @@
     width: 100vw;
     height: 100vh;
     z-index: 10;
-
     background-color: rgba(0, 0, 0, 0.493);
     display: flex;
     flex-direction: column;
@@ -27,6 +26,14 @@
     overflow-y: auto;
     
     
+}
+
+.exit--button{
+    color: #000;
+}
+
+.exit--button:hover{
+    cursor: pointer;
 }
 
 .table--mobile::-webkit-scrollbar-track {
@@ -105,6 +112,7 @@
 
 .download-buttons button:hover{
     transform: scale(1.08);
+    cursor: pointer;
 }
 
 

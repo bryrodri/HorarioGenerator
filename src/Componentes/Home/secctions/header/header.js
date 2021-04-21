@@ -10,8 +10,8 @@ const Header = () => {
             <div className="header-contenedor">
                 <div className="header-text">
                     <h1>Generador de horarios</h1>
-                    <p>Con esta aplicacion tienes la posibilidad de generar a tu gusto un horario</p>
-                    <NavLink to="/Builder"  className="header-button"> <span className="text-header">Generar el mio</span></NavLink> 
+                    <p>Con esta aplicacion web tienes la posibilidad de generar de manera facil y practica un horario para tu uso diario.</p>
+                    <NavLink to="/Builder"  className="header-button"> <span className="text-header">Iniciar el mio</span></NavLink> 
                 </div>
 
                 <div className="header-image">

@@ -87,7 +87,7 @@ export const Card = (props) => {
 
             <div className="delete-card">
                     <button className="button-classic trash-button" onClick={deleteCard}><BiTrash size={18}/></button>
-                    <button className="button-classic trash-button" onClick={hideCard}>{visIcon()}</button>
+                    <button className="button-classic trash-button hidden-button" onClick={hideCard}>{visIcon()}</button>
             </div>
 
             <div className="card-Estatus">
@@ -128,8 +128,8 @@ export const Card = (props) => {
             </div>
 
             <div className="card-button">
-                <button className="button-add-delete" disabled={props.asignacion.visibility ? false : true} onClick={agregarBloque}> <BiPlus size={14}/> </button>
-                <button className="button-add-delete" disabled={props.asignacion.visibility ? false : true} onClick={eliminarBloque}> <BiMinus size={14}/> </button>
+                <button className="button-add-delete add--button" disabled={props.asignacion.visibility ? false : true} onClick={agregarBloque}> <BiPlus size={14}/> </button>
+                <button className="button-add-delete  delete--button" disabled={props.asignacion.visibility ? false : true} onClick={eliminarBloque}> <BiMinus size={14}/> </button>
             </div>
 
 

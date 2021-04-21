@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Route , Redirect, Switch } from 'react-router-
 import Nav from './Componentes/nav/nav'
 import ClasicBuilder from './Componentes/ClasicBuilder/clasicBuilder'
 import Home from './Componentes/Home/home'
-import SelectionTipe from './Componentes/SelectionTipe/selectionTipe'
-import VisualBuilder from './Componentes/VisualBuilder/visualBuilder'
+import Manual from './Componentes/manual/manual'
+
 import Foot from './Componentes/foot/foot'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Switch>
         <Route exact path="/Home" component={Home}></Route>
         <Route exact path="/Builder" component={ClasicBuilder}></Route>
-        
+        <Route exact path="/Manual" component={Manual}></Route>
         <Route exact path="/"><Redirect to="/Home" /> </Route>
         {/* <Route exact path="/404" component={NotFound}></Route> */}
         {/* <Route >

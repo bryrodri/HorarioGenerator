@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 
 import { Box, Menu } from 'grommet';
 
+import { MdHelpOutline } from "react-icons/md";
+import { BiTrash, BiIntersect, BiBadge, BiBadgeCheck, BiShow, BiCheckbox, BiCheck } from "react-icons/bi";
+
+
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 //estilos
 import './clasicBuilder.css'
@@ -100,7 +104,49 @@ export class ClasicBuilder extends Component {
         if(this.state.horario){
         return (
             <div className="min-container-hei">
-                    <Box align="end" pad="large">
+                
+                    <Box align="center" justify="between" pad="medium" direction="row">
+
+                    <div className="information--secction">
+                        <MdHelpOutline className="information--icon"  size={18}/>
+
+                        <div className="information--container">
+                            <div className="information--item">
+                                <BiTrash size={16} />
+                                <span>Icono de accion para eliminar tarjeta</span>
+                            </div>
+                            <div className="information--item">
+                                <BiShow size={16} />
+                                <span>Icono de accion para ocultar o mostrar tarjeta</span>
+                            </div>
+
+                            <div className="information--item">
+                                
+                                <BiBadge size={16} />
+                                <span>Icono de estatus e indica que la tarjeta le falta alguna fecha o nombre</span>
+                            </div>
+                            <div className="information--item">
+                                <BiBadgeCheck size={16} />
+                                <span>Icono de estatus e indica que la tarjeta esta correcta </span>
+                            </div>
+                            <div className="information--item">
+                                <BiIntersect size={16} />
+                                <span>Icono de estatus e indica que la tarjeta o bloque esta duplicado</span>
+                            </div>
+
+                            <div className="information--item">
+                                <BiCheckbox size={16} />
+                                <span>Icono de estatus e indica que el bloque esta vacio o le falta algun campo</span>
+                            </div>
+
+                            <div className="information--item">
+                                <BiCheck size={16} />
+                                <span>Icono de estatus e indica que el bloque esta correcto</span>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <Menu
                         dropProps={{ align: { top: 'bottom', left: 'left' } }}
                         label="Acciones"
@@ -110,6 +156,7 @@ export class ClasicBuilder extends Component {
                         ]}
                     />
                     </Box>
+                    
                 <CardSecction ChangeHorario={this.ChangeHorario} horario={this.state.horario} ></CardSecction>
                 <NotificationContainer/>
 

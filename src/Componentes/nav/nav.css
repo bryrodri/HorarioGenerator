@@ -6,5 +6,75 @@
      #F72585,
      #B5179E);
 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+
+}
+
+.nav-menu{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 80%;
+    height: 100%;
+
+
+}
+
+.nav--buton{
+    display: block;
+    width: 20%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.nav--buton:hover{
+
+    background-color: rgba(0, 0, 0, 0.109);
+}
+
+
+.nav--action{
+    align-self: flex-end;
+    width: 20%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav--action--button{
+    text-decoration: none;
+    font-size: 0.9rem;
+    background: 
+    linear-gradient(to right bottom, 
+     #4CC9F0,
+     #480CA8);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 22px;
+
+
+}
+
+.nav--action--button-dis{
+    display: none;
+
 
 }

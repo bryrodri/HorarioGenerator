@@ -40,6 +40,7 @@ export default class Table extends Component {
 						inicio:bloques[index2].inicio,
 						cantidad:bloques[index2].fin-bloques[index2].inicio,
 						nombre:horario.asignaciones[index].titulo,
+						color:horario.asignaciones[index].color,
 					}
 	
 					generador.push(objetoGenerador)
@@ -59,9 +60,14 @@ export default class Table extends Component {
 	EstilosDiv=(dia, hora)=> {
 
 		if(this.state.generador.filter(x=>x.dia===dia && x.inicio===hora).length>0){
+			var cantidad = this.state.generador.filter(x=>x.dia===dia && x.inicio===hora)[0].cantidad
+			var cantidad2= cantidad===1 ? 0 : cantidad*1.7
+			var color=this.state.generador.filter(x=>x.dia===dia && x.inicio===hora)[0].color
 
 			return {
-				 		height:this.state.generador.filter(x=>x.dia===dia && x.inicio===hora)[0].cantidad*33+"px",
+				 		height:cantidad*34+cantidad2+"px",
+						backgroundColor:color+"c4"
+						
 					
 					}
 		}
@@ -101,7 +107,7 @@ export default class Table extends Component {
 		return (
 			<div className="table-container">
 
-			<table className="table--item" id="horario" >
+			<table className="table--item" id="horario"  >
 				<thead>
 					<tr >
 						<th></th>

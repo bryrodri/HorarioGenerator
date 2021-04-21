@@ -67,7 +67,7 @@ const HorarioSecction = (props) => {
             <div className="horario-secction-container">
 
                 <div className="float-button-window">
-                        <button className="button-classic trash-button" onClick={props.OpenCloseHorarioPage} ><BsX size={18}/></button>
+                        <button className="button-classic exit--button" onClick={props.OpenCloseHorarioPage} ><BsX size={18}/></button>
                 </div>
 
                 <div className="informacion-horarioSecction">
