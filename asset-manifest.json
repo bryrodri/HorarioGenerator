@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/bryrodri/HorarioGenerator.git/static/css/main.3a1dcc4c.css",
-    "main.js": "/bryrodri/HorarioGenerator.git/static/js/main.7eb16f40.js",
-    "static/js/787.d53bd399.chunk.js": "/bryrodri/HorarioGenerator.git/static/js/787.d53bd399.chunk.js",
-    "static/media/notification.svg?s3g3t9": "/bryrodri/HorarioGenerator.git/static/media/notification.5d0158671dd860c714c4.svg",
-    "static/media/notification.eot": "/bryrodri/HorarioGenerator.git/static/media/notification.3657084dc0419605a91c.eot",
-    "static/media/notification.woff?s3g3t9": "/bryrodri/HorarioGenerator.git/static/media/notification.c392cd33d9d9de730f9d.woff",
-    "static/media/notification.ttf?s3g3t9": "/bryrodri/HorarioGenerator.git/static/media/notification.c5d9251ea82e42f75381.ttf",
-    "index.html": "/bryrodri/HorarioGenerator.git/index.html",
-    "main.3a1dcc4c.css.map": "/bryrodri/HorarioGenerator.git/static/css/main.3a1dcc4c.css.map",
-    "main.7eb16f40.js.map": "/bryrodri/HorarioGenerator.git/static/js/main.7eb16f40.js.map",
-    "787.d53bd399.chunk.js.map": "/bryrodri/HorarioGenerator.git/static/js/787.d53bd399.chunk.js.map"
+    "main.css": "/HorarioGenerator/static/css/main.09006051.css",
+    "main.js": "/HorarioGenerator/static/js/main.934d65f5.js",
+    "static/js/787.d53bd399.chunk.js": "/HorarioGenerator/static/js/787.d53bd399.chunk.js",
+    "static/media/notification.svg?s3g3t9": "/HorarioGenerator/static/media/notification.5d0158671dd860c714c4.svg",
+    "static/media/notification.eot": "/HorarioGenerator/static/media/notification.3657084dc0419605a91c.eot",
+    "static/media/notification.woff?s3g3t9": "/HorarioGenerator/static/media/notification.c392cd33d9d9de730f9d.woff",
+    "static/media/notification.ttf?s3g3t9": "/HorarioGenerator/static/media/notification.c5d9251ea82e42f75381.ttf",
+    "index.html": "/HorarioGenerator/index.html",
+    "main.09006051.css.map": "/HorarioGenerator/static/css/main.09006051.css.map",
+    "main.934d65f5.js.map": "/HorarioGenerator/static/js/main.934d65f5.js.map",
+    "787.d53bd399.chunk.js.map": "/HorarioGenerator/static/js/787.d53bd399.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a1dcc4c.css",
-    "static/js/main.7eb16f40.js"
+    "static/css/main.09006051.css",
+    "static/js/main.934d65f5.js"
   ]
 }
