@@ -24,6 +24,8 @@ function App() {
         <Route exact path="/Builder" component={ClasicBuilder}></Route>
         <Route exact path="/Manual" component={Manual}></Route>
         <Route exact path="/"><Redirect to="/Home" /> </Route>
+        <Route exact path="/HorarioGenerator"><Redirect to="/Home" /> </Route>
+
         {/* <Route exact path="/404" component={NotFound}></Route> */}
         {/* <Route >
           <Redirect to="/404" /> 

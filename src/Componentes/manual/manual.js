@@ -10,7 +10,7 @@ export default class Manual extends Component {
                 <div className="manual-container primer-manual">
                     <h2>Primeros pasos</h2>
                     <div className="manual-image">
-                        <img src={"/img/cardempty.png"}></img>
+                        <img src={process.env.PUBLIC_URL + "/img/cardempty.png"}></img>
                     </div>
 
                     <div className="manual-text">
@@ -42,7 +42,7 @@ export default class Manual extends Component {
                     </div>
 
                     <div className="manual-image">
-                        <img src={"/img/cardfull.png"}></img>
+                        <img src={ process.env.PUBLIC_URL + "/img/cardfull.png"}></img>
                     </div>
 
                 </div>
@@ -51,7 +51,7 @@ export default class Manual extends Component {
 
                     <div className="last-manual-image">
                         <h2 style={{textAlign:"center"}}>Como generar el horario</h2>
-                        <img src={"/img/horario.jpg"}></img>
+                        <img src={process.env.PUBLIC_URL + "/img/horario.jpg"}></img>
                     </div>
 
                     <div className="last-manual-text">
