@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HorarioGenerator/static/css/main.09006051.css",
-    "main.js": "/HorarioGenerator/static/js/main.934d65f5.js",
+    "main.js": "/HorarioGenerator/static/js/main.fac1781d.js",
     "static/js/787.d53bd399.chunk.js": "/HorarioGenerator/static/js/787.d53bd399.chunk.js",
     "static/media/notification.svg?s3g3t9": "/HorarioGenerator/static/media/notification.5d0158671dd860c714c4.svg",
     "static/media/notification.eot": "/HorarioGenerator/static/media/notification.3657084dc0419605a91c.eot",
@@ -9,11 +9,11 @@
     "static/media/notification.ttf?s3g3t9": "/HorarioGenerator/static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "/HorarioGenerator/index.html",
     "main.09006051.css.map": "/HorarioGenerator/static/css/main.09006051.css.map",
-    "main.934d65f5.js.map": "/HorarioGenerator/static/js/main.934d65f5.js.map",
+    "main.fac1781d.js.map": "/HorarioGenerator/static/js/main.fac1781d.js.map",
     "787.d53bd399.chunk.js.map": "/HorarioGenerator/static/js/787.d53bd399.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09006051.css",
-    "static/js/main.934d65f5.js"
+    "static/js/main.fac1781d.js"
   ]
 }
